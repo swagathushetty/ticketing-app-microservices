@@ -4,6 +4,6 @@ export const errorHandler = (err:Error,req:Request,res:Response,next:NextFunctio
  console.log('something went wrong',err)
 
  res.status(400).send({
-    message:'something went wrong'
+    message:err.message
  })
 }
