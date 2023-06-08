@@ -35,12 +35,12 @@ router.post(
     const user = User.build({email,password})
 
     await user.save()
-
+    
     //generate json web token 
     const userJwt = jwt.sign({
       id:user.id,
       email:user.email
-    },'asdf')
+    },process.env.JWT_KEY!)
 
     req.session = {
       jwt:userJwt
