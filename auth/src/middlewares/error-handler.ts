@@ -5,7 +5,7 @@ export const errorHandler = (err:Error,req:Request,res:Response,next:NextFunctio
 
 
    if(err instanceof CustomError){
-      return res.status(err.statusCode).send({errors:err.seralizeErrors()})
+      return res.status(err.statusCode).send({errors:err.serializeErrors()})
    }
    // if(err instanceof RequestValidationError){
    //    return res.status(err.statusCode).send({errors:err.seralizeErrors()})

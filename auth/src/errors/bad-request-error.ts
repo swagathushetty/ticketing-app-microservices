@@ -1,21 +1,15 @@
-import { CustomError } from "./custom-errors";
+import { CustomError } from './custom-errors';
 
 export class BadRequestError extends CustomError {
-    statusCode = 400;
+  statusCode = 400;
 
-    constructor(message:string){
-        super(message);
+  constructor(public message: string) {
+    super(message);
 
-        this.message
+    Object.setPrototypeOf(this, BadRequestError.prototype);
+  }
 
-        Object.setPrototypeOf(this,BadRequestError.prototype)
-
-    }
-
-
-    seralizeErrors(){
-        return [{
-            message:'not found'
-        }]
-    }
+  serializeErrors() {
+    return [{ message: this.message }];
+  }
 }
