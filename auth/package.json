@@ -9,10 +9,11 @@
   },
   "jest":{
     "preset":"ts-jest",
-    "testEnviroment":"node",
+    "testEnviroment":"testEnviroment",
     "setupFilesAfterEnv":[
       "./src/test/setup.ts"
-    ]
+    ],
+    "testTimeout":30000
   },  
   "keywords": [],
   "author": "",
